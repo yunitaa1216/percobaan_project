@@ -45,7 +45,7 @@ dependencies:
   geocoding: ^2.1.1
   syncfusion_flutter_datepicker: ^23.1.41
   intl: ^0.18.1
-  cloud_firestore: ^4.10.0s
+  cloud_firestore: ^4.10.0
 
 flutter_icons:
   android: "launcher_icon"
