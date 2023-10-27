@@ -1,3 +1,4 @@
+import 'package:project/kos_list.dart';
 import 'package:project/widget/category.dart';
 import 'package:project/widget/coffee_shop.dart';
 import 'package:flutter/material.dart';
@@ -6,34 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
-  final List<CoffeShop> daftarCoffeShop = [
-    CoffeShop(
-      imagePath: "assets/kos_1.jpg",
-      nameShop: "Kos Bahagia",
-      harga: "500k/bulan",
-      fasilitas: "Kamar mandi dalam, AC, Wifi, CCTV, Parkir",
-    ),
-    CoffeShop(
-              imagePath: "assets/kos_2.jpg",
-              nameShop: "Kos Sejahtera",
-              harga: "4.9",
-              fasilitas: "13.00 - 23.00",
-            ),
-            CoffeShop(
-              imagePath: "assets/kos_3.jpg",
-              nameShop: "Kos Ibu Dewi",
-              harga: "4.7",
-              fasilitas: "13.00 - 20.00",
-            ),
-            CoffeShop(
-              imagePath: "assets/kos_4.jpg",
-              nameShop: "Kos Makmur",
-              harga: "4.7",
-              fasilitas: "13.00 - 20.00",
-            ),
-  ];
 
-  // const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -101,27 +76,27 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 15,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Container(
-                        height: 60,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            color: Color(0xFFF5F5F7),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: TextField(
-                          cursorHeight: 20,
-                          autofocus: false,
-                          decoration: InputDecoration(
-                              hintText: "Cari Kos Terbaikmu",
-                              prefixIcon: Icon(Icons.search),
-                              border: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.grey, width: 2),
-                                  borderRadius: BorderRadius.circular(30))),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(15),
+                    //   child: Container(
+                    //     height: 60,
+                    //     width: double.infinity,
+                    //     decoration: BoxDecoration(
+                    //         color: Color(0xFFF5F5F7),
+                    //         borderRadius: BorderRadius.circular(30)),
+                    //     // child: TextField(
+                    //     //   cursorHeight: 20,
+                    //     //   autofocus: false,
+                    //     //   decoration: InputDecoration(
+                    //     //       hintText: "Cari Kos Terbaikmu",
+                    //     //       prefixIcon: Icon(Icons.search),
+                    //     //       border: OutlineInputBorder(
+                    //     //           borderSide:
+                    //     //               BorderSide(color: Colors.grey, width: 2),
+                    //     //           borderRadius: BorderRadius.circular(30))),
+                    //     // ),
+                    //   ),
+                    // ),
                   ],
                 )
               ],
@@ -139,25 +114,74 @@ class _HomePageState extends State<HomePage> {
               nameShop: "Kos Bahagia",
               harga: "500k/bulan",
               fasilitas: "Kamar mandi dalam, AC, Wifi, CCTV, Parkir",
+              onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CoffeeShopDetail(
+                    imagePath: "assets/kos_1.jpg", 
+                    nameShop: "Kos Bahagia", 
+                    harga: "500k/bulan", 
+                    fasilitas: "Kamar mandi dalam, AC, Wifi, CCTV, Parkir",
+                    phoneNumber: "082136619175",))
+                );
+              },
             ),
             CoffeShop(
-              imagePath: "assets/kos_2.jpg",
-              nameShop: "Kos Sejahtera",
-              harga: "4.9",
-              fasilitas: "13.00 - 23.00",
-            ),
-            CoffeShop(
-              imagePath: "assets/kos_3.jpg",
-              nameShop: "Kos Ibu Dewi",
-              harga: "4.7",
-              fasilitas: "13.00 - 20.00",
-            ),
-            CoffeShop(
-              imagePath: "assets/kos_4.jpg",
-              nameShop: "Kos Makmur",
-              harga: "4.7",
-              fasilitas: "13.00 - 20.00",
-            ),
+  imagePath: "assets/kos_2.jpg",
+  nameShop: "Kos Sejahtera",
+  harga: "4.9",
+  fasilitas: "13.00 - 23.00",
+  onPressed: () {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CoffeeShopDetail(
+          imagePath: "assets/kos_2.jpg",
+          nameShop: "Kos Sejahtera",
+          harga: "4.9",
+          fasilitas: "13.00 - 23.00",
+          phoneNumber: "082136619175",
+        ),
+      ),
+    );
+  },
+),
+CoffeShop(
+  imagePath: "assets/kos_3.jpg",
+  nameShop: "Kos Ibu Dewi",
+  harga: "4.7",
+  fasilitas: "13.00 - 20.00",
+  onPressed: () {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CoffeeShopDetail(
+          imagePath: "assets/kos_3.jpg",
+          nameShop: "Kos Ibu Dewi",
+          harga: "4.7",
+          fasilitas: "13.00 - 20.00",
+          phoneNumber: "082136619175",
+        ),
+      ),
+    );
+  },
+),
+CoffeShop(
+  imagePath: "assets/kos_4.jpg",
+  nameShop: "Kos Makmur",
+  harga: "4.7",
+  fasilitas: "13.00 - 20.00",
+  onPressed: () {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CoffeeShopDetail(
+          imagePath: "assets/kos_4.jpg",
+          nameShop: "Kos Makmur",
+          harga: "4.7",
+          fasilitas: "13.00 - 20.00",
+          phoneNumber: "082136619175",
+        ),
+      ),
+    );
+  },
+),
           ],
         )),
       ),

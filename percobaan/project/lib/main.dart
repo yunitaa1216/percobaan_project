@@ -1,5 +1,6 @@
 import 'package:project/detail_page.dart';
 import 'package:project/home_page.dart';
+import 'package:project/kos_list.dart';
 import 'package:project/login_google_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/Home',
         routes: {
+          // '/List':(context) => CoffeeShopList(),
           '/Home':(context) => HomePage(),
           '/Detail':(context) => DetailPage(),
         },
