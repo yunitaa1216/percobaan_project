@@ -1,4 +1,4 @@
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:tes_project/detail_page.dart';
 import 'package:tes_project/home_page.dart';
 // import 'package:tes_project/login_page.dart';
@@ -7,10 +7,8 @@ import 'package:flutter/material.dart';
 
 // import 'database.dart';
 
-void main() async{
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  runApp(MyApp());
+void main(){
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,8 +24,3 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light, primarySwatch: Colors.amber));
   }
 }
-
-// Future<void> delete() => handleThenable(DatabaseMethod().deleteApp());
-
-// handleThenable(deleteApp) {
-// } // Panggil metode `handleThenable()` pada objek `DatabaseMethod`
