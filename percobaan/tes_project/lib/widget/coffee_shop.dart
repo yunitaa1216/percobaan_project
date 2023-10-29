@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CoffeShop extends StatelessWidget {
@@ -6,12 +7,16 @@ class CoffeShop extends StatelessWidget {
   final String nameShop;
   final String harga;
   final String fasilitas;
+  final VoidCallback onPressed;
+
   const CoffeShop(
       {Key? key,
       required this.imagePath,
       required this.nameShop,
       required this.harga,
-      required this.fasilitas})
+      required this.fasilitas,
+      required this.onPressed,
+      })
       : super(key: key);
 
   @override
@@ -67,7 +72,14 @@ class CoffeShop extends StatelessWidget {
                               width: 5,
                             ),
                             Text(fasilitas,
-                                style: GoogleFonts.montserrat(fontSize: 12))
+                                style: GoogleFonts.montserrat(fontSize: 12)),
+                              SizedBox(
+                                width: 20,
+                              ),
+                            TextButton(
+      onPressed: onPressed, // Use the provided onPressed callback
+      child: Text("Detail"),
+    )
                           ],
                         )
                       ],
