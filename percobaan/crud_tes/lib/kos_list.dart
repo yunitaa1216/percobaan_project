@@ -25,7 +25,7 @@ class CoffeeShopDetail extends StatelessWidget {
   String _response = "";
   
   Future<void> _submitForm() async {
-    String key = '';
+    String key = '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';
     if (_formKey.currentState!.validate()){
       final apikey = key;
       const apiUrl = 'https://api.openai.com/v1/completions';
