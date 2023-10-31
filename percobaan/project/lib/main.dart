@@ -1,8 +1,8 @@
 import 'package:project/detail_page.dart';
 import 'package:project/home_page.dart';
 import 'package:project/kos_list.dart';
-// import 'package:project/login_google_page.dart';
-import 'package:project/pages/login_regis_page.dart';
+import 'package:project/login_google_page.dart';
+// import 'package:project/pages/login_regis_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
