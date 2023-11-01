@@ -1,5 +1,4 @@
-import 'package:crud_new/model/model.dart';
-import 'package:crud_new/utils/colors.dart';
+import 'package:project/models/chatbot_model.dart';
 import 'package:flutter/material.dart';
 
 class ChatMessageWidget extends StatelessWidget {
@@ -15,8 +14,8 @@ class ChatMessageWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       padding: const EdgeInsets.all(16),
       color: chatMessageType == ChatMessageType.bot
-          ? ColorSets.botBackgroundColor
-          : ColorSets.backgroundColor,
+          ? Colors.white
+          : Colors.white,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -24,19 +23,18 @@ class ChatMessageWidget extends StatelessWidget {
               ? Container(
                   margin: const EdgeInsets.only(right: 16.0),
                   child: CircleAvatar(
-                    backgroundColor: const Color.fromRGBO(16, 163, 127, 1),
-                    child: Image.asset(
-                      'assets/bot.png',
-                      color: Colors.black,
-                      scale: 1.5,
+                    child: const CircleAvatar(
+                    child: Icon(
+                      Icons.person,
                     ),
+                  ),
                   ),
                 )
               : Container(
                   margin: const EdgeInsets.only(right: 16.0),
                   child: const CircleAvatar(
                     child: Icon(
-                      Icons.person,
+                      Icons.person_2,
                     ),
                   ),
                 ),

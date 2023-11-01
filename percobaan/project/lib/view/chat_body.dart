@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../model/model.dart';
-import '../network/chat_repository.dart';
-import '../utils/colors.dart';
+import 'package:project/models/chatbot_model.dart';
+import 'package:project/models/chat_repository.dart';
 import 'chat_message.dart';
 
 class ChatPage extends StatefulWidget {
@@ -32,14 +30,14 @@ class _ChatPageState extends State<ChatPage> {
         title: const Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            "OpenAI's ChatGPT Flutter Example \n@ngjunya",
+            "Tanya Tanya KosApp?",
             maxLines: 2,
             textAlign: TextAlign.center,
           ),
         ),
-        backgroundColor: ColorSets.botBackgroundColor,
+        backgroundColor: Colors.white,
       ),
-      backgroundColor: ColorSets.backgroundColor,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -74,11 +72,11 @@ class _ChatPageState extends State<ChatPage> {
     return Visibility(
       visible: !isLoading,
       child: Container(
-        color: ColorSets.botBackgroundColor,
+        color: Colors.white,
         child: IconButton(
           icon: const Icon(
             Icons.send_rounded,
-            color: Color.fromRGBO(142, 142, 160, 1),
+            color: Colors.black,
           ),
           onPressed: () async {
             setState(
@@ -120,10 +118,10 @@ class _ChatPageState extends State<ChatPage> {
     return Expanded(
       child: TextField(
         textCapitalization: TextCapitalization.sentences,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.black),
         controller: _textController,
         decoration: const InputDecoration(
-          fillColor: ColorSets.botBackgroundColor,
+          fillColor: Colors.white,
           filled: true,
           border: InputBorder.none,
           focusedBorder: InputBorder.none,

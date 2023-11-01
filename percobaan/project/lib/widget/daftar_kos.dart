@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CoffeShop extends StatelessWidget {
+class DaftarKos extends StatelessWidget {
   final String imagePath;
-  final String nameShop;
+  final String nameKos;
   final String harga;
   final String fasilitas;
   final VoidCallback onPressed;
 
-  const CoffeShop(
+  const DaftarKos(
       {Key? key,
       required this.imagePath,
-      required this.nameShop,
+      required this.nameKos,
       required this.harga,
       required this.fasilitas,
       required this.onPressed,
@@ -50,7 +49,7 @@ class CoffeShop extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(nameShop,
+                        Text(nameKos,
                             style: GoogleFonts.montserrat(
                                 fontSize: 17, fontWeight: FontWeight.bold)),
                         SizedBox(
@@ -77,9 +76,9 @@ class CoffeShop extends StatelessWidget {
                                 width: 20,
                               ),
                             TextButton(
-      onPressed: onPressed, // Use the provided onPressed callback
-      child: Text("Detail"),
-    )
+                              onPressed: onPressed, // Use the provided onPressed callback
+                              child: Text("Detail"),
+                            )
                           ],
                         )
                       ],
