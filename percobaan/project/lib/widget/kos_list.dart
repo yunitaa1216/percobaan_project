@@ -34,7 +34,7 @@ class DaftarKosDetail extends StatelessWidget {
             TextButton(
               onPressed: () {
                 // Telepon pemilik kos
-                launch('whatsapp://send?phone=$phoneNumber');
+                launch('whatsapp://send?phone=+6282136619175');
               },
               child: Text("Telepon Pemilik Kos"),
             ),

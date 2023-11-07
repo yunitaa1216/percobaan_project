@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/models/user_model.dart';
 import 'package:project/view/login_page.dart';
+import 'package:project/view/profil.dart';
 import 'package:project/view_model/userprovider.dart';
 import 'package:provider/provider.dart';
 import 'package:project/view/home_page.dart';
@@ -12,9 +13,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
+    
     return ChangeNotifierProvider(
       create: (context) => UserProvider(), // Inisialisasi UserProvider
       child: MaterialApp(
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
           '/Login': (context) => LoginPage(),
           '/Home': (context) => HomePage(),
           '/chat': (context) => ChatPage(),
+          '/profil':(context) => ProfilePage()
         },
         theme: ThemeData(
           brightness: Brightness.light,
