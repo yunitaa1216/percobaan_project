@@ -35,6 +35,9 @@ class _HomePageState extends State<HomePage> {
           if (index == 1) {
             Navigator.pushNamed(context, '/chat');
           }
+          else{
+            Navigator.pushNamed(context, '/profil');
+          };
         },
       ),
       body: SingleChildScrollView(

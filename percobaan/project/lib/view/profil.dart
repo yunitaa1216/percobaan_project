@@ -1,50 +1,67 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:project/auth.dart';
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// class ProfilPage extends StatelessWidget {
-//  ProfilPage({Key? key}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
 
-//   final User? user = Auth().currentUser;
+class _ProfilePageState extends State<ProfilePage> {
+  String usetoken = "";
 
-//   Future<void> signOut() async {
-//     await Auth().signOut();
-//   }
 
-//   Widget _title(){
-//     return const Text('Firebase auth');
-//   }
+  @override
+  void initState() {
+    super.initState();
+    loadDataFromApi();
+    fetchData();
+  }
 
-//   Widget _userUid(){
-//     return Text(user?.email ?? 'user email');
-//   }
+  Future<void> loadDataFromApi() async {
+  final prefs = await SharedPreferences.getInstance();
+  final profil = prefs.getString('data');
+  final data = json.decode(profil.toString());
 
-//   Widget _signOutButton(){
-//     return ElevatedButton(
-//       onPressed: signOut, 
-//       child: const Text('Sign Out'),
-//       );
-//   }
+  String token = data['token'];
+  setState(() {
+    usetoken = token;
+  });
+}
 
-//   @override
-//   Widget build (BuildContext context){
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: _title(),
-//       ),
-//       body: Container(
-//         height: double.infinity,
-//         width: double.infinity,
-//         padding: const EdgeInsets.all(20),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             _userUid(),
-//             _signOutButton()
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+Future<void> fetchData() async{
+  final response = await http.get(Uri.parse('http://192.168.43.216:5001/auth'), 
+  headers: {
+      'Authorization': 'Bearer $usetoken',
+    },);
+  print(response.body);
+  print(usetoken);
+}
+
+  @override
+  Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Profil Pengguna'),
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pop(context); // Kembali ke halaman sebelumnya
+        },
+      ),
+    ),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 50.0,
+          ),
+          SizedBox(height: 16.0),
+        ],
+      ),
+    ),
+  );
+}
+}
